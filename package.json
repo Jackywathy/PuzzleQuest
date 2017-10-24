@@ -1,0 +1,27 @@
+{
+	"name": "puzzlequest-server",
+	"version": "0.0.0",
+	"description": "a server that does puzzle queset things",
+	"keywords": [
+		"puzzlequest",
+		"webserver",
+		"unsw",
+		"hs1917",
+		"not comp1917"
+	],
+	"homepage": "puzzlequest.tk",
+	"bugs": {
+		"url": "https://github.com/Jackywathy/PuzzleQuest/issues",
+		"email": "bugs@puzzlequest.tk"
+	},
+	"license": "MIT",
+	"repository": "github:Jackywathy/PuzzleQuest",
+	"dependencies": {
+		"express": "*",
+		"node-gyp": "*",
+		"nodemon": "^1.12.1"
+	},
+	"scripts": {
+		"start": "nodejs main.js"
+	}
+}
