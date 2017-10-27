@@ -19,10 +19,16 @@
 	"dependencies": {
 		"express": "*",
 		"node-gyp": "*",
-		"nodemon": "^1.12.1"
+		"nan": "*",
+		"nodemon": "*",
+		"mime": "*"
 	},
 	"scripts": {
 		"start" : "nodemon main.js",
-		"noreload": "node main.js"
+		"noreload": "node main.js",
+		"build": "node-gyp configure && node-gyp build",
+		"save" : "node ./binaries/save.js",
+		"restore" : "node ./binaries/restore.js",
+		"clean" : "rm -rf build"
 	}
 }
