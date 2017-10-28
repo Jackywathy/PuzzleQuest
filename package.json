@@ -21,7 +21,7 @@
 		"node-gyp": "*",
 		"nan": "*",
 		"nodemon": "*",
-		"mime": "*"
+		"mime": "2"
 	},
 	"scripts": {
 		"start" : "nodemon main.js",
