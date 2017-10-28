@@ -19,7 +19,7 @@ function serveMandelbrotImage(request, response){
 	var location = request.params.location;
     var match = location.match(re);
 
-    if (match == null || match.length != 4){
+    if (match === null || match.length !== 4){
     	response.set("Content-Type", mime.getType('html'));
     	response.send("Cannot parse values :(");
     	return
@@ -62,6 +62,5 @@ server.get('/mandelbrot/:location', serveMandelbrotImage);
 // lazy hack to make viewer work - will fix later
 server.get('/:location', serveMandelbrotImage);
 
-;
-server.listen(port, function(){console.log("Running app on localhost:"+port)})	
+server.listen(port, function(){console.log("Running app on localhost:"+port)});
  
