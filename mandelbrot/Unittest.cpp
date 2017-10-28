@@ -25,10 +25,10 @@ int main(int argc, char* argv[]){
 			zoom = atoi(argv[4]);
 		}
 		printf("Creating image at x:%lf, y:%lf, zoom:%d as %s\n", x, y, zoom, filename);
-		bits8* image = mandleBrotByteArray(x, y, zoom);
+		uint8_t* image = mandelbrot::mandleBrotByteArray(x, y, zoom);
 
 		// write the file
-		fwrite(image, sizeof(bits8), bmpSize, file);
+		fwrite(image, sizeof(uint8_t), mandelbrot::BMP_BYTES_SIZE, file);
 		fclose(file);
 	}
 }

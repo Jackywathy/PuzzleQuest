@@ -11,17 +11,29 @@
 // for bits8
 #include <stdint.h>
 
-#define bits8 uint8_t
+#define BYTES_PER_PIXEL 3
 
 
-int escapeSteps (double x, double y);
+namespace mandelbrot {
+	int escapeSteps(double x, double y);
 
-// Generates a mandelBrot bitmpa array.
-// Has size bmpSize
-bits8 *mandleBrotByteArray(double x, double y, int zoom);
+	// Generates a mandelBrot bitmpa array.
+	// Has size bmpSize
+	uint8_t *mandleBrotByteArray(double x, double y, int zoom);
 
-// bmp header size in bytes
-extern const int bmpHeaderSize;
-// bmp size in bytes
-extern const int bmpSize;
+	const int PIXELS_HEIGHT = 512;
+	const int PIXELS_WIDTH = 512;
+	const int MAX_ITERATION = 256;
 
+	const uint8_t bmpHeader[] = {
+      0x42, 0x4D, 0x36, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x36, 0x00, 0x00, 0x00, 0x28, 0x00,
+      0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x01, 0x00, 0x18, 0x00, 0x00, 0x00,
+      0x00, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x13, 0x0B, 0x00, 0x00, 0x13, 0x0B, 0x00, 0x00, 0x00, 0x00,
+      0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	};
+
+	// size of header
+	const int bmpHeaderSize = sizeof(bmpHeader);
+	// size of whole BMP
+	const int BMP_BYTES_SIZE = (PIXELS_WIDTH * PIXELS_HEIGHT * BYTES_PER_PIXEL) + sizeof(bmpHeader);
+}

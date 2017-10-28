@@ -1,0 +1,1 @@
+Creating image at x:0.000000, y:0.000000, zoom:8 as out.bmp
