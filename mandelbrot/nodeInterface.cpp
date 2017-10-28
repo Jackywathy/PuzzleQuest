@@ -3,6 +3,7 @@
 #include <nan.h>
 
 #include "mandelbrot.h"
+#include "pixelColor.h"
 
 
 void GetMandelbrotBuffer(const Nan::FunctionCallbackInfo<v8::Value>& info) {
@@ -21,9 +22,9 @@ void GetMandelbrotBuffer(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 	double y = info[1]->NumberValue();
 	int zoom = info[2]->NumberValue();
 
-	bits8* image = mandleBrotByteArray(x, y, zoom);
+	uint8_t* image = mandelbrot::mandleBrotByteArray(x, y, zoom);
 
-	Nan::MaybeLocal<v8::Object> buffer = Nan::CopyBuffer((char*)image, bmpSize);
+	Nan::MaybeLocal<v8::Object> buffer = Nan::CopyBuffer((char*)image, mandelbrot::BMP_BYTES_SIZE);
 	v8::Local<v8::Object> obj = buffer.ToLocalChecked();
 	info.GetReturnValue().Set(obj);
 
