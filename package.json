@@ -29,6 +29,6 @@
 		"build": "node-gyp configure && node-gyp build",
 		"save" : "node ./binaries/save.js",
 		"restore" : "node ./binaries/restore.js",
-		"clean" : "rm -rf build"
+		"clean" : "rm -rf build && rm -rf node_modules"
 	}
 }
