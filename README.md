@@ -1,8 +1,6 @@
 # PuzzleQuest
-**Server for HS/COMP 1917 Puzzlequest**
+**Server for Puzzlequest**
 The server backend for the puzzlequest
-
-*Please don't share with other :D*
 
 ## Installation
 
